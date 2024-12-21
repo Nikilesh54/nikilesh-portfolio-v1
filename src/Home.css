@@ -460,18 +460,274 @@ section {
 }
 
 /*Experience Section*/
-#experience {
-    background-color: #fff;
-    color: #272341;
-    margin-top: -10rem;
-    padding-top: 15rem;
+/* experience.css */
+
+.experience {
+    position: relative;
+    padding: 8rem 0;
+    background: #f8fafc;
+    overflow: hidden;
 }
 
-.Experience-Role{
-    font-style: italic;
-    margin-bottom: 1.8rem;
-    font-size: 13px;
-    padding-left: 25px;
+/* Animated background */
+.experience::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+            radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
+            radial-gradient(circle at 80% 70%, rgba(217, 70, 239, 0.15) 0%, transparent 40%);
+    animation: backgroundPulse 10s ease-in-out infinite alternate;
+}
+
+@keyframes backgroundPulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+.section-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 5rem;
+    position: relative;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.02em;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 5px;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+    border-radius: 10px;
+    /*filter: blur(2px);*/
+}
+
+.project-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+}
+
+.project-wrapper__text {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 24px;
+    box-shadow:
+            0 10px 30px rgba(0, 0, 0, 0.1),
+            0 1px 3px rgba(0, 0, 0, 0.05);
+    padding: 3rem;
+    margin-bottom: 3rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.project-wrapper__text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 0;
+}
+
+.project-wrapper__text:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow:
+            0 20px 40px rgba(0, 0, 0, 0.15),
+            0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.project-wrapper__text:hover::before {
+    opacity: 0.03;
+}
+
+.project-wrapper__text-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+    position: relative;
+    display: inline-block;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-wrapper__text-title::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-wrapper__text:hover .project-wrapper__text-title::after {
+    width: 100%;
+}
+
+.Experience-Role {
+    font-size: 1.6rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #e2e8f0;
+    position: relative;
+}
+
+.mb-4 {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+    color: #475569;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: left;
+}
+
+.mb-4::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: transparent;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(0);
+}
+
+.project-wrapper__text:hover .mb-4::before {
+    transform: translateX(5px);
+}
+
+.mb-4:hover {
+    transform: translateX(5px);
+    color: #1e293b;
+}
+
+/* Modern scrollbar styling */
+.project-wrapper::-webkit-scrollbar {
+    width: 8px;
+}
+
+.project-wrapper::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 4px;
+}
+
+.project-wrapper::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+    border-radius: 4px;
+}
+
+/* Floating elements animation */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Loading animation */
+.load-hidden {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    animation: fadeInUpScale 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fadeInUpScale {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Responsive Design with modern breakpoints */
+@media screen and (max-width: 1024px) {
+    .section-title {
+        font-size: 3rem;
+    }
+
+    .project-wrapper__text {
+        padding: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .project-wrapper__text-title {
+        font-size: 1.8rem;
+    }
+
+    .Experience-Role {
+        font-size: 1.4rem;
+    }
+
+    .mb-4 {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+}
+
+/* Add smooth scrolling and selection styling */
+html {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background: rgba(99, 102, 241, 0.2);
+    color: #1e293b;
+}
+
+/* Custom cursor interaction */
+.project-wrapper__text {
+    cursor: pointer;
+}
+
+/* Add glass morphism effect */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.7);
+    /*backdrop-filter: blur(10px);*/
+    /*-webkit-backdrop-filter: blur(10px);*/
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Smooth transition for all interactive elements */
+* {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Projects Section */
