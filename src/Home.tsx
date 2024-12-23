@@ -53,8 +53,8 @@ const AboutSection: React.FC = () => {
                         </p>
                         <p className="about-info-text">
                             Currently, pursuing my master's at Virginia Tech
-                            <img src="/Images/VT.png " alt="VT Logo" className="about-inline-logo"/>
-                            where I'm expanding my tech skills and exploring new frontiers in coding<img src="/Images/Semicolon.png " alt="Semicolon Logo" className="about-inline-logo"/>
+                            <img src="public/VT.png " alt="VT Logo" className="about-inline-logo"/>
+                            where I'm expanding my tech skills and exploring new frontiers in coding<img src="public/Semicolon.png" alt="Semicolon Logo" className="about-inline-logo"/>
                         </p>
                         <p className="about-info-text">When I'm not busy coding, you can usually find me on X
                             tweeting or scrolling through Reddit, keeping up with everything. I have a knack for creating
@@ -124,7 +124,7 @@ const AboutSection: React.FC = () => {
                         rel="noreferrer"
                         target="_blank"
                         className="cta-btn cta-btn--resume"
-                        href="Images/resume.pdf"
+                        href="public/resume.pdf"
                     >
                         View Resume
                     </a>
