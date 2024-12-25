@@ -124,7 +124,7 @@ const AboutSection: React.FC = () => {
                         rel="noreferrer"
                         target="_blank"
                         className="cta-btn cta-btn--resume"
-                        href="public/resume.pdf"
+                        href="/Images/resume.pdf"
                     >
                         View Resume
                     </a>
