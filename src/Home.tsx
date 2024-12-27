@@ -3,8 +3,7 @@ import './Home.css';
 import { useState, useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import GLOBE from 'vanta/dist/vanta.globe.min.js';
-
-
+import './index.css';
 
 const AboutSection: React.FC = () => {
     const [vantaEffect, setVantaEffect] = useState<any>(null);
@@ -41,28 +40,11 @@ const AboutSection: React.FC = () => {
             <div className="container">
                 <h2 className="section-title load-hidden">About me</h2>
                 <div className="row about-wrapper">
-                    <div className="about-wrapper__info load-hidden">
-                        <p className="about-info-text">👋 Hey there! I'm Nikilesh – a tech enthusiast👨🏾‍💻 with a
-                            serious love for coding and a borderline addiction to caffeine ☕. While I'm physically based
-                            in Virginia📍, my mind often wanders to a futuristic tech universe📡 where everything is
-                            running smoothly on Python and JavaScript.
-                            I earned my bachelor's🎓 in Computer Science💻 and spent some time as a full-stack engineer at
-                            Cognizant, diving deep into SQL databases, AWS, and everything web development. Whether it's
-                            building a sleek website with HTML, CSS, and React, or fine-tuning the backend, I'm all in.
-
-                        </p>
-                        <p className="about-info-text">
-                            Currently, pursuing my master's at Virginia Tech
-                            <img src="public/VT.png " alt="VT Logo" className="about-inline-logo"/>
-                            where I'm expanding my tech skills and exploring new frontiers in coding<img src="public/Semicolon.png" alt="Semicolon Logo" className="about-inline-logo"/>
-                        </p>
-                        <p className="about-info-text">When I'm not busy coding, you can usually find me on X
-                            tweeting or scrolling through Reddit, keeping up with everything. I have a knack for creating
-                            problems in my life🙃 and solving them in code🙂 – and I tend to crack jokes while I'm at it, so
-                            expect some laughs along the way.</p>
-                        <p className="about-info-text">I'm always excited to connect with fellow tech enthusiasts, so
-                            feel free to reach out on LinkedIn or drop me a line at "nikileshm@vt.edu"📧. Let's chat
-                            about code, cloud, or anything tech-related – I'm all ears! 🚀</p>
+                        <div className="about-wrapper__info load-hidden">
+                            <p className="about-info-text">
+                                👋 Hi, I'm Nikilesh – a tech enthusiast, full-stack developer, and master's student at Virginia
+                                Tech <img src="public/VT.png " alt="VT Logo" className="about-inline-logo"/>, passionate about coding, cloud, and solving problems with a dash of humor! <img src="public/Semicolon.png" alt="Semicolon Logo" className="about-inline-logo"/>🚀
+                            </p>
                         {/* Skills */}
                         <div className="skills-card">
                             <p>
@@ -118,17 +100,14 @@ const AboutSection: React.FC = () => {
                             </p>
                         </div>
                     </div>
-
-                    <span className="d-flex mt-3">
                     <a
                         rel="noreferrer"
                         target="_blank"
                         className="cta-btn cta-btn--resume"
-                        href="/Images/resume.pdf"
+                        href="/resume.pdf"
                     >
                         View Resume
                     </a>
-                </span>
                 </div>
             </div>
             </div>
@@ -202,13 +181,17 @@ const Home: React.FC = () => {
                 </div>
             </section>
 
-            <CursorEffect /> {/* Add the CursorEffect component */}
-            <AboutSection />
+            <CursorEffect/> {/* Add the CursorEffect component */}
+            <AboutSection/>
 
             {/*Experience*/}
+            {/*
+            <ExperienceSection />
+*/}
             <section id="experience">
                 <div className="project-wrapper">
                     <h2 className="section-title dark-blue-text">Experience</h2>
+
 
                     {/*Cognizant: Software Engineer*/}
                     <div className="row">
@@ -280,7 +263,6 @@ const Home: React.FC = () => {
                 </div>
             </section>
 
-
             {/*Projects*/}
             <section id="projects">
                 <div className="project-wrapper">
@@ -337,31 +319,36 @@ const Home: React.FC = () => {
                     </div>
                     <div className="row">
                         <div className="col-lg-4 col-sm-12">
-                        <div className="project-wrapper__text load-hidden">
-                                    <h3 className="project-wrapper__text-title">Full-Stack LMS with Django & React:</h3>
-                                    <div>
-                                        <p className="mb-4">
-                                            • Modeled a full-stack LMS using Django, PostgreSQL, React, and TypeScript for better system performance.
-                                        </p>
-                                        <p className="mb-4">
-                                            • Architected Python-based quiz modules with randomized questions and multi-format support, enhancing user engagement by 25%.
-                                        </p>
-                                        <p className="mb-4">
-                                            • Built RESTful APIs with Node.js and Express, reducing data retrieval time by 30%.
-                                        </p>
-                                        <p className="mb-4">
-                                            • Utilized React Hooks for state management and produced secure video uploads and PDF generation, improving content accessibility by 40%.
-                                        </p>
-                                    </div>
-
+                            <div className="project-wrapper__text load-hidden">
+                                <h3 className="project-wrapper__text-title">Full-Stack LMS with Django & React:</h3>
+                                <div>
+                                    <p className="mb-4">
+                                        • Modeled a full-stack LMS using Django, PostgreSQL, React, and TypeScript for
+                                        better system performance.
+                                    </p>
+                                    <p className="mb-4">
+                                        • Architected Python-based quiz modules with randomized questions and
+                                        multi-format support, enhancing user engagement by 25%.
+                                    </p>
+                                    <p className="mb-4">
+                                        • Built RESTful APIs with Node.js and Express, reducing data retrieval time by
+                                        30%.
+                                    </p>
+                                    <p className="mb-4">
+                                        • Utilized React Hooks for state management and produced secure video uploads
+                                        and PDF generation, improving content accessibility by 40%.
+                                    </p>
                                 </div>
-                            </div>
-                            <div className="col-lg-8 col-sm-12">
+
                             </div>
                         </div>
-
+                        <div className="col-lg-8 col-sm-12">
+                        </div>
                     </div>
+
+                </div>
             </section>
+
             {/*Footer*/}
             <section id="contact">
                 <div className="container">

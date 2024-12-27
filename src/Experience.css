@@ -1,0 +1,231 @@
+/* Base Layout */
+.experience-section {
+    @apply relative py-20 px-4 sm:px-6 lg:px-8;
+    background: linear-gradient(to bottom, #f8fafc, #f1f5f9);
+}
+
+.section-container {
+    @apply relative max-w-7xl mx-auto space-y-16;
+}
+
+/* Header Styles */
+.section-header {
+    @apply text-center;
+}
+
+.header-content {
+    @apply inline-flex items-center gap-3 bg-white px-6 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-300;
+}
+
+.header-icon {
+    @apply w-8 h-8 text-blue-600;
+}
+
+.header-underline {
+    @apply mt-4 h-1 w-20 bg-blue-600 mx-auto rounded-full;
+}
+
+/* Timeline Styles */
+.timeline-container {
+    @apply relative pl-20;
+}
+
+.timeline-bar {
+    @apply absolute left-0 top-0 bottom-0 w-2 bg-gray-200;
+}
+
+.timeline-progress {
+    @apply absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b from-blue-600 to-purple-600;
+    transform-origin: top;
+}
+
+.experiences-container {
+    @apply space-y-32;
+}
+
+.experience-item {
+    @apply relative;
+}
+
+.experience-content {
+    @apply ml-8;
+}
+
+/* Timeline Node Styles */
+.timeline-node {
+    @apply absolute -left-4 flex items-center;
+}
+
+.node {
+    @apply w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300;
+}
+
+.node.active {
+    @apply bg-blue-600;
+}
+
+.node:not(.active) {
+    @apply bg-gray-300;
+}
+
+.node span {
+    @apply text-xs font-bold text-white;
+}
+
+.node-line {
+    @apply ml-4 h-px w-8 bg-gray-300;
+}
+
+/* Experience Card Styles */
+.experience-card {
+    @apply relative bg-white rounded-2xl p-8 transition-all duration-300;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.experience-card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    transform: translateY(-2px);
+}
+
+.card-gradient {
+    @apply absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 opacity-0 rounded-2xl transition-opacity duration-500;
+}
+
+.experience-card:hover .card-gradient {
+    @apply opacity-100;
+}
+
+.card-content {
+    @apply relative space-y-6;
+}
+
+.card-header {
+    @apply flex justify-between items-start;
+}
+
+.title-section {
+    @apply space-y-2;
+}
+
+.company-name {
+    @apply text-2xl font-bold;
+    background: linear-gradient(to right, #2563eb, #1e40af);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.role-title {
+    @apply text-lg font-semibold text-blue-600;
+}
+
+.year-badge {
+    @apply flex items-center gap-2 bg-blue-50 px-4 py-1 rounded-full transition-all duration-300;
+}
+
+.year-badge:hover {
+    @apply bg-blue-100;
+    transform: scale(1.05);
+}
+
+.year-badge span {
+    @apply text-blue-600 font-semibold;
+}
+
+.link-icon {
+    @apply text-blue-400 transition-all duration-300;
+}
+
+/* Tech Stack Styles */
+.tech-stack {
+    @apply flex flex-wrap gap-3;
+}
+
+.tech-item {
+    @apply bg-white p-2 rounded-lg shadow-md group relative transition-all duration-300;
+}
+
+.tech-item:hover {
+    @apply shadow-lg;
+    transform: translateY(-2px) rotate(5deg);
+}
+
+.tech-item img {
+    @apply w-6 h-6;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+.tech-tooltip {
+    @apply absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 transition-all duration-200;
+    pointer-events: none;
+}
+
+.tech-item:hover .tech-tooltip {
+    @apply opacity-100;
+    transform: translate(-50%, -2px);
+}
+
+/* Points Container Styles */
+.points-container {
+    @apply space-y-4;
+}
+
+.point-item {
+    @apply flex items-start gap-3 group/item transition-all duration-300;
+}
+
+.point-bullet {
+    @apply w-2 h-2 rounded-full bg-blue-600 mt-2 transition-all duration-300;
+}
+
+.point-item:hover .point-bullet {
+    @apply scale-150;
+}
+
+.point-item p {
+    @apply text-gray-700 leading-relaxed transition-colors duration-300;
+}
+
+.point-item:hover p {
+    @apply text-gray-900;
+}
+
+/* Grid Pattern Background */
+.bg-grid-pattern {
+    background-image: linear-gradient(to right, #666 1px, transparent 1px),
+    linear-gradient(to bottom, #666 1px, transparent 1px);
+    background-size: 24px 24px;
+    @apply opacity-[0.02];
+}
+
+/* Cursor Interactions */
+.experience-card,
+.tech-item,
+.point-item,
+.year-badge {
+    cursor: pointer;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.experience-card {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+    .timeline-container {
+        @apply pl-12;
+    }
+
+    .card-header {
+        @apply flex-col gap-4;
+    }
+
+    .year-badge {
+        @apply self-start;
+    }
+}
